@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contact Us</title>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="contactUs.css">
+    </head>
+    <body>
+        <div id="centermaker">
+        <main id="contact-form-root">
+            <form data-testid="test-profile-card" id="contact-form" name="contact-us-form" method="" action="#">
+                <h2>Contact Us.</h2>
+
+                <section class="form-elements">
+                    <label for="contact-name">Full Name:</label>
+                    <input
+                    type="text"
+                    id="contact-name"
+                    data-testid="test-contact-name"
+                    placeholder="First and Last Name"
+                    name="name"
+                    
+                    />
+                    <div id="name-error-div" class="error-msg hidden" data-testid="">Name Is Required</div>
+                </section>
+
+                <section class="form-elements">
+                    <label for="contact-email">Email:</label>
+                    <input
+                    type="email"
+                    id="contact-email"
+                    data-testid="test-contact-email"
+                    placeholder="name@mail.com"
+                    name="email"
+                    />
+                    <div class="error-msg hidden">Valid email is required</div>
+                </section>
+
+                <section class="form-elements">
+                    <label for="contact-subject">Subject:</label>
+                    <input
+                    type="text"
+                    id="contact-subject"
+                    data-testid="test-contact-subject"
+                    size="65"
+                    name="subject"
+                    />
+                    <div class="error-msg hidden" data-testid="test-contact-error-email">Subject is required</div>
+                </section>
+
+                <section class="form-elements">
+                    <label for="contact-message">Message:</label>
+                    <textarea
+                    rows="12"
+                    data-testid="test-contact-message"
+                    id="contact-message"
+                    placeholder="Type your message here"
+                    minlength="10"
+                    ></textarea>
+                    <div class="error-msg hidden">Message is required</div>
+                </section>
+
+                <section class="form-elements">
+                    <button type="submit" id="submit-button" data-testid="test-contact-submit">Submit</button>
+                    <div class="success-msg hidden" id="" data-testid="test-contact-success">Message Sent Succesfully</div>
+
+                    <a href="index.html" id="index-link"><img src="photos/homepage.jpg"></a>
+                </section>
+            </form>
+        </main>
+
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+        <script type="text/javascript" src="contactUs.js"></script>
+
+        </div>
+    </body>
+</html>
+
+
+
+
+
+
+

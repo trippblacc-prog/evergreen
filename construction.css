@@ -1,0 +1,286 @@
+:root {
+    --primary: #8BC34A;
+    --primary-soft: #A5D66F;
+    --primary-dark: #5E8E2E;
+
+    --heading-main: #f8fafc;
+    --heading-dark: #0f172a;
+
+    --text-light: #e2e8f0;
+    --text-dark: #334155;
+    --muted: #94a3b8;
+
+    --overlay: rgba(0,0,0,0.65);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #fff;
+    color: var(--text-dark);
+    line-height: 1.7;
+}
+
+#centermaker {
+    max-width: 1400px;
+    margin: auto;
+}
+
+/* ---------------- HEADER ---------------- */
+
+header {
+    position: relative;
+    min-height: 100vh;
+    padding: 1.5rem;
+    background: url(photos/stock.jpg) center/cover no-repeat;
+    color: white;
+    text-align: center;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--overlay);
+}
+
+header > * {
+    position: relative;
+    z-index: 2;
+}
+
+#navdiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#img1 {
+    width: 80px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+#img1:hover {
+    transform: scale(1.1);
+}
+
+#brand {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary);
+    letter-spacing: 1px;
+}
+
+/* Header Content */
+
+#headcontent {
+    max-width: 800px;
+    margin: 8vh auto;
+}
+
+#headcontent h2 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    color: var(--heading-main);
+}
+
+#headcontent h3 {
+    color: var(--primary-soft);
+    margin-bottom: 1rem;
+}
+
+#headcontent p {
+    color: var(--text-light);
+}
+
+/* Buttons */
+
+#mainbutton,
+#contactbutton {
+    background: var(--primary);
+    border: none;
+    padding: 0.9rem 2.5rem;
+    border-radius: 999px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color:#e2e8f0;
+    display: inline-block; /* 🔑 THIS FIXES IT */
+    margin-top: 1.5rem;
+}
+
+#mainbutton:hover,
+#contactbutton:hover {
+    background: var(--primary-soft);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(139,195,74,0.35);
+}
+
+/* ---------------- SECTIONS ---------------- */
+
+section {
+    padding: 5rem 2rem;
+}
+
+#section1,
+#section3 {
+    text-align: center;
+}
+
+#section1 h2,
+#section2 h2 {
+    color: var(--heading-dark);
+}
+
+#section1 h3,
+#section2 h3 {
+    color: var(--primary-dark);
+}
+
+/* Section 2 */
+
+#floatdiv {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    align-items: center;
+}
+
+#content1,
+#content2 {
+    position: relative;
+    width: 90%;
+    max-width: 1100px;
+    min-height: 70vh;
+    border-radius: 20px;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#content1 {
+    background: url(photos/safety-workwear.webp) center/cover no-repeat;
+    align-items: flex-end;
+    text-align: right;
+}
+
+#content2 {
+    background: url(photos/diversityworkers.jpg) center/cover no-repeat;
+    text-align: center;
+}
+
+#content1::before,
+#content2::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    border-radius: 20px;
+}
+
+#content1 *,
+#content2 * {
+    position: relative;
+    z-index: 2;
+    color: var(--heading-main);
+}
+
+/* About */
+
+#section4 {
+    background: url(photos/texture1.jpg) center/cover no-repeat;
+    color: var(--text-light);
+}
+
+#section4 h4 {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+#section4 h5 {
+    margin-top: 2rem;
+    border-left: 4px solid var(--primary);
+    padding-left: 0.65rem;
+}
+
+#section4 ul {
+    list-style: none;
+    margin-top: 0.4rem;
+}
+
+#section4 li {
+    margin-bottom: 0.2rem;
+    font-size: 0.8rem;
+}
+
+#section4 p{
+    font-size: 0.8rem;
+}
+
+#section4 li::before {
+    content: "▸ ";
+    color: var(--primary);
+}
+
+/* Footer */
+
+footer {
+    background: url(photos/texture2.jpg) center/cover no-repeat;
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-light);
+    font-size: 0.85rem;
+}
+
+/* ---------------- REVEAL ANIMATION ---------------- */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 0.9s ease;
+}
+
+.reveal-left {
+    transform: translateX(-80px);
+}
+
+.reveal-right {
+    transform: translateX(80px);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translate(0);
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+    #content1 {
+        align-items: center;
+        text-align: center;
+    }
+
+    .reveal-left,
+    .reveal-right {
+        transform: translateY(60px);
+    }
+}
+
+
+
+
+
+
